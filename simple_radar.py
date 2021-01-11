@@ -2,6 +2,7 @@ import numpy as np
 import math
 from target import CornerReflector
 
+#Purpose is to have a customizable RADAR that gets readings from targets in an idealistic scenario
 class RadarData:
     def __init__(self):
 
@@ -31,6 +32,8 @@ class RadarData:
         self.radarPos = [0,0,0]
 
     #targets: list of CornerReflector class objects
+    #
+    #return: list of readings for each rangebin with target returns added
     def get_scan(self,targets):
         self.scanData = np.zeros(self.numRangebins)
 

@@ -1,5 +1,6 @@
 import numpy as np
 #Trihedral corner reflector
+#Goal is to calculate the RCS of the target based on the wavelength the RADAR is using
 class CornerReflector:
     #sideLengths: Size of edges of corner reflector (m)
     #radarWavelength: Pulse wavelength of radar (Hz)
