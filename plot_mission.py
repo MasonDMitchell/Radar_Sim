@@ -45,19 +45,19 @@ def plotMission(dronePos,targets,scans,time):
 
     #Init function, basically just zero parameters are set.
     def init():
-        dronePlot.set_data([],[])
-        dronePlot.set_3d_properties([])
+        dronePlot.set_data(np.array([]),np.array([]))
+        dronePlot.set_3d_properties(np.array([]))
 
-        targetPlot.set_data([],[])
-        targetPlot.set_3d_properties([])
+        targetPlot.set_data(np.array([]),np.array([]))
+        targetPlot.set_3d_properties(np.array([]))
 
         return dronePlot, targetPlot,im
     #Animation function steps through each value of drone pos and plots new pos, targets, and RTI
     def animate(i):
         dronePlot.set_data(dronePos[i][0],dronePos[i][1])
         dronePlot.set_3d_properties(dronePos[i][2])
-        targetPlot.set_data(targetsX,targetsY)
-        targetPlot.set_3d_properties(targetsZ)
+        targetPlot.set_data(np.array(targetsX),np.array(targetsY))
+        targetPlot.set_3d_properties(np.array(targetsZ))
         im.set_array(scans[0:i+1])
         ax2.set_ylim(0,i+1)
 
